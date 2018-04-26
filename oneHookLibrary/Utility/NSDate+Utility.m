@@ -218,15 +218,19 @@ const int YEAR = DAY*365;
 {
     NSCalendar* cal = [NSCalendar currentCalendar];
     NSDateComponents* comp = [cal components:NSCalendarUnitWeekday fromDate:self];
-    return cal.veryShortWeekdaySymbols[[comp weekday]];
+    NSInteger index = ([comp weekday] - 1) % 7;
+    return cal.shortWeekdaySymbols[index];
 }
 
 - (NSString *)shortWeekUTC
 {
-        NSCalendar* cal = [NSCalendar currentCalendar];
-        cal.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
-        NSDateComponents* comp = [cal components:NSCalendarUnitWeekday fromDate:self];
-        return cal.veryShortWeekdaySymbols[[comp weekday]];
+    NSCalendar* cal = [NSCalendar currentCalendar];
+    cal.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    NSDateComponents* comp = [cal components:NSCalendarUnitWeekday fromDate:self];
+    
+    NSInteger index = ([comp weekday] - 1) % 7;
+    
+    return cal.shortWeekdaySymbols[index];
 }
     
 - (NSString *)shortDateUTC
