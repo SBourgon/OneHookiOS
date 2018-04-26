@@ -139,7 +139,6 @@
 		4C7A06041D416F0C00C47097 /* OHFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHFlowLayout.m; sourceTree = "<group>"; };
 		4C98AA8E1B56E16A000B6D9C /* UIColor+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utility.h"; sourceTree = "<group>"; };
 		4C98AA8F1B56E16A000B6D9C /* UIColor+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utility.m"; sourceTree = "<group>"; };
-		4CB06E511D564E1F004AF1BF /* oneHookLibrary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "oneHookLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CBCD7AE1C1A5660006385EA /* OHImageViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHImageViewerViewController.h; sourceTree = "<group>"; };
 		4CBCD7AF1C1A5660006385EA /* OHImageViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHImageViewerViewController.m; sourceTree = "<group>"; };
 		BD19F606206D6B6300CA82C3 /* NoStatusBarImagePickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoStatusBarImagePickerController.h; sourceTree = "<group>"; };
@@ -439,7 +438,6 @@
 				D3FE001B1AC507D7004D4BD2 /* Views */,
 				D3FE00201AC50A13004D4BD2 /* Animations */,
 				D3FEFFF51AC50788004D4BD2 /* Supporting Files */,
-				4CB06E511D564E1F004AF1BF /* oneHookLibrary-Bridging-Header.h */,
 			);
 			path = oneHookLibrary;
 			sourceTree = "<group>";
