@@ -7,7 +7,6 @@
 //
 
 #import "OHFloatingActionButton.h"
-#import "UIImage+Color.h"
 #import "OneHookFoundation.h"
 
 @interface OHFloatingActionButton () {

@@ -23,9 +23,9 @@
 - (void)showDefault
 {
     [UIView animateWithDuration:0.25 animations:^{
-        _progressView.alpha = 0.0f;
-        if(_finishView) {
-            _finishView.alpha = 0.0;
+        self->_progressView.alpha = 0.0f;
+        if(self->_finishView) {
+           self->_finishView.alpha = 0.0;
         }
         self.titleLabel.alpha = 1.0f;
     } completion:^(BOOL finished) {
@@ -46,8 +46,8 @@
     }
     [UIView animateWithDuration:0.25 animations:^{
         self.progressView.alpha = 1.0f;
-        if(_finishView) {
-            _finishView.alpha = 0.0;
+        if(self->_finishView) {
+            self->_finishView.alpha = 0.0;
         }
         self.titleLabel.alpha = 0.0f;
     } completion:^(BOOL finished) {
@@ -67,10 +67,10 @@
     }
     
     [UIView animateWithDuration:0.25 animations:^{
-        if(_finishView) {
-            _finishView.alpha = 1.0f;
+        if(self->_finishView) {
+            self->_finishView.alpha = 1.0f;
         }
-        _progressView.alpha = 0.0;
+        self->_progressView.alpha = 0.0;
         self.titleLabel.alpha = 0.0f;
     } completion:^(BOOL finished) {
         

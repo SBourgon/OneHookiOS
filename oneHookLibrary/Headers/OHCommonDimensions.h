@@ -15,12 +15,6 @@
 #define kTabbarDefaultHeight 48
 #define kToolbarActionIconFontSize 24
 
-#define NAVIGATION_BAR_ICON_SIZE 44
-
-#define FAB_LENGTH_SMALL 32
-#define FAB_LENGTH_MEDIUM 48
-#define FAB_LENGTH_LARGE 64
-
 #define MARGIN_TINY 2.0
 #define MARGIN_SMALL 4.0
 #define MARGIN_MEDIUM 8.0

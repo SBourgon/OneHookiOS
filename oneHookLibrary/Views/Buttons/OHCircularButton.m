@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 oneHook inc. All rights reserved.
 //
 
-#import "UIImage+Color.h"
 #import "OHCircularButton.h"
 #import "OneHookFoundation.h"
 
