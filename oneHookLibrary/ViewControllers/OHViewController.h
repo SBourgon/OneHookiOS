@@ -11,7 +11,7 @@
 
 typedef NS_ENUM(NSInteger, OHViewControllerToolbarStyle) {
     OHViewControllerNoToolbar,
-    OHViewControllerToolbarAsStatusBar,
+    //OHViewControllerToolbarAsStatusBar,
     OHViewControllerHasToolbar
 };
 

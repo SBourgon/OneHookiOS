@@ -91,20 +91,14 @@
             [sb appendFormat:@"%C", [timeFormat characterAtIndex:i]];
             i++;
             continue;
-        } else if([[timeFormat substringWithRange:NSMakeRange(i, 2)] isEqualToString:@"DD"]) {
-            [sb appendString:@"%1$d"];
-            i+=2;
         } else if([[timeFormat substringWithRange:NSMakeRange(i, 2)] isEqualToString:@"HH"]) {
-            [sb appendString:@"%2$02d"];
+            [sb appendString:@"%1$02d"];
             i+=2;
         } else if([[timeFormat substringWithRange:NSMakeRange(i, 2)] isEqualToString:@"MM"]) {
-            [sb appendString:@"%3$02d"];
+            [sb appendString:@"%2$02d"];
             i+=2;
         } else if([[timeFormat substringWithRange:NSMakeRange(i, 2)] isEqualToString:@"SS"]) {
-            [sb appendString:@"%4$02d"];
-            i+=2;
-        } else if([[timeFormat substringWithRange:NSMakeRange(i, 2)] isEqualToString:@"MS"]) {
-            [sb appendString:@"%5$03d"];
+            [sb appendString:@"%3$02d"];
             i+=2;
         } else {
             [sb appendFormat:@"%c", [timeFormat characterAtIndex:i]];
@@ -182,11 +176,8 @@
         _timer = nil;
     }
     
-    if ([self.parsedTimeFormat rangeOfString:@"%5$03d"].location != NSNotFound) {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:kDefaultFireIntervalHighUse target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
-    }else{
-        _timer = [NSTimer scheduledTimerWithTimeInterval:kDefaultFireIntervalNormal target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
-    }
+    _timer = [NSTimer scheduledTimerWithTimeInterval:kDefaultFireIntervalNormal target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+    
     [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     
     if(startCountDate == nil){
@@ -303,16 +294,17 @@
         }
     }
     
-    long milliseconds = timeToShow.timeIntervalSince1970 * 1000;
+    long seconds = timeToShow.timeIntervalSince1970;
     
-    long mili = milliseconds % 1000;
-    long seconds = (milliseconds / 1000) % 60;
-    long minute = (milliseconds / 60000) % 60;
-    long hour = (milliseconds / 3600000) % 24;
-    long day = milliseconds / 86400000;
-    
-    NSString *strDate = [NSString stringWithFormat:_parsedTimeFormat, day, hour, minute, seconds, mili];
-    self.timeLabel.text = strDate;
+    long minute = (seconds / 60) % 60;
+    long hour = (seconds / 3600) % 24;
+    long day = seconds / 86400;
+    if (day > 1) {
+        self.timeLabel.text = [NSString stringWithFormat:@"%ld Days Left", day]; //TODO i18n
+    } else {
+        NSString *strDate = [NSString stringWithFormat:_parsedTimeFormat, hour, minute, seconds];
+        self.timeLabel.text = strDate;
+    }
 }
 
 @end
