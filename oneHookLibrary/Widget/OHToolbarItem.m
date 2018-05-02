@@ -18,12 +18,9 @@
         [button setBackgroundColor:[UIColor clearColor] forState:UIControlStateNormal];
         [button setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.2] forState:UIControlStateHighlighted];
         
-        [button setTitleColor:[UIColor whiteColor]
-                     forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor whiteColor]
-                     forState:UIControlStateHighlighted];
-        [button setTitleColor:[UIColor whiteColor]
-                     forState:UIControlStateDisabled];
+        [button setTitleColor:[UIColor whiteColor]                    forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor]                    forState:UIControlStateHighlighted];
+        [button setTitleColor:[UIColor whiteColor]                    forState:UIControlStateDisabled];
         
         return button;
         

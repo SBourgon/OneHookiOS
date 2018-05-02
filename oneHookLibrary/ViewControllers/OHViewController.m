@@ -148,14 +148,8 @@
     CGFloat height = CGRectGetHeight(self.view.bounds);
     
     if(_lastWidth != width && _lastHeight != height) {
-        CGFloat statusBarHeight = SHOW_STATUS_BAR ? kSystemStatusBarHeight : 0;
         CGFloat toolbarMaximumHeight = [self defaultToolbarHeight] + self.toolbarExtension;
         
-        /*
-        if(self.toolbarStyle == OHViewControllerToolbarAsStatusBar) {
-            toolbarMaximumHeight = statusBarHeight;
-        }
-        */
         if(_contentScrollableView) {
             _contentScrollableView.frame = self.view.bounds;
             _contentScrollableView.contentInset = UIEdgeInsetsMake(self.padding.top + toolbarMaximumHeight,
@@ -173,13 +167,7 @@
             _scrollViewLastContentOffsetY = -toolbarMaximumHeight;
             self.contentScrollableView.contentOffset = CGPointMake(0, -toolbarMaximumHeight);
         }
-        /*
-        if(self.toolbarStyle == OHViewControllerToolbarAsStatusBar) {
-            self.toolbar.frame = CGRectMake(0,
-                                            0,
-                                            CGRectGetWidth(self.view.bounds),
-                                            statusBarHeight);
-        } else*/ if(self.toolbarStyle == OHViewControllerHasToolbar) {
+        if(self.toolbarStyle == OHViewControllerHasToolbar) {
             if(_contentScrollableView) {
                 [self scrollViewDidScroll:_contentScrollableView];
             } else {
