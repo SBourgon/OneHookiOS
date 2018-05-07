@@ -205,7 +205,7 @@
     /* take care toolbar expand or collapse */
     if(_toolbarHeight < toolbarDefaultHeight) {
         CGFloat progress = _toolbarHeight / toolbarDefaultHeight;
-        CGFloat targetHeight = _toolbarHeight;
+        CGFloat targetHeight;
         BOOL expand = NO;
         if(progress < 0.5) {
             targetHeight = toolbarMinimumHeight;
@@ -214,10 +214,7 @@
             targetHeight = toolbarDefaultHeight;
         }
         
-        CGRect finalFrame = CGRectMake(0,
-                                       0,
-                                       CGRectGetWidth(self.view.bounds),
-                                       targetHeight);
+        CGRect finalFrame = CGRectMake(0,0,CGRectGetWidth(self.view.bounds),targetHeight);
         
         [UIView animateWithDuration:0.15 animations:^{
             [self toolbar:self.toolbar willLayoutTo:finalFrame expand:expand];

@@ -238,7 +238,7 @@
 
 -(void)updateLabel{
     NSTimeInterval timeDiff = [[[NSDate alloc] init] timeIntervalSinceDate:startCountDate];
-    NSDate *timeToShow = [NSDate date];
+    NSDate *timeToShow;
     
     /***OHTimerLabelTypeStopWatch Logic***/
     

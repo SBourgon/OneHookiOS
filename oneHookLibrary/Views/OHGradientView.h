@@ -10,9 +10,9 @@
 
 @interface OHGradientView : UIView
 
-- (id)initWithHorizontalGradient;
-- (id)initWithVerticalGradient;
-- (void)setGradientColorFrom:(UIColor*)fromColor to:(UIColor*)toColor;
-- (void)setGradientColors:(NSArray*) colors forPoints:(NSArray<NSNumber *>*) points;
+- (instancetype _Nonnull) initWithHorizontalGradient;
+- (instancetype _Nonnull) initWithVerticalGradient;
+- (void)setGradientColorFrom:(UIColor* _Nonnull)fromColor to:(UIColor*_Nonnull)toColor;
+- (void)setGradientColors:(NSArray*_Nonnull) colors forPoints:(NSArray<NSNumber *>* _Nonnull) points;
 
 @end
