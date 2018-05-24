@@ -59,9 +59,9 @@ typedef enum{
 
 
 /*--------Init methods to choose*/
--(id)initWithTimerType:(OHTimerLabelType)theType;
--(id)initWithLabel:(UILabel*)theLabel andTimerType:(OHTimerLabelType)theType;
--(id)initWithLabel:(UILabel*)theLabel;
+-(instancetype _Nonnull )initWithTimerType:(OHTimerLabelType)theType;
+-(instancetype _Nonnull )initWithLabel:(UILabel*)theLabel andTimerType:(OHTimerLabelType)theType;
+-(instancetype _Nonnull )initWithLabel:(UILabel*)theLabel;
 
 
 /*--------Timer control methods to use*/

@@ -157,9 +157,6 @@
                                                                    self.padding.bottom + kMinimumBottomMargin,
                                                                    self.padding.right);
         } else {
-#ifdef DEBUG
-            NSLog(@"Warning: content scrollable view is not set");
-#endif
         }
         
         if(_lastWidth == 0) {

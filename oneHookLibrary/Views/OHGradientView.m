@@ -53,6 +53,7 @@
     CAGradientLayer* layer = (CAGradientLayer*) self.layer;
     layer.locations = points;
     layer.colors = colors;
+    
 }
 
 @end

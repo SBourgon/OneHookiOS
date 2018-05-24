@@ -37,11 +37,11 @@
 
 @implementation OHTimerLabel
 
-- (id)initWithTimerType:(OHTimerLabelType)theType{
+- (instancetype)initWithTimerType:(OHTimerLabelType)theType{
     return [self initWithLabel:nil andTimerType:theType];
 }
 
-- (id)initWithLabel:(UILabel *)theLabel andTimerType:(OHTimerLabelType)theType
+- (instancetype)initWithLabel:(UILabel *)theLabel andTimerType:(OHTimerLabelType)theType
 {
     self = [super init];
     
@@ -53,11 +53,11 @@
     return self;
 }
 
-- (id)initWithLabel:(UILabel*)theLabel{
+- (instancetype)initWithLabel:(UILabel*)theLabel{
     return [self initWithLabel:theLabel andTimerType:kDefaultTimerType];
 }
 
-- (id)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame{
     
     self = [super initWithFrame:frame];
     if (self) {
@@ -66,7 +66,7 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
