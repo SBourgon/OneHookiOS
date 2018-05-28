@@ -307,11 +307,17 @@
     long minute = (milliseconds / 60000) % 60;
     long hour = (milliseconds / 3600000) % 24;
     long day = milliseconds / 86400000;
+    NSString* timeString;
     if (day > 1) {
-        self.timeLabel.text = [NSString stringWithFormat:@"%ld Days Left", day]; //TODO i18n
+        timeString = [NSString stringWithFormat:@"%ld Days Left", day]; //TODO i18n
     } else {
-        NSString *strDate = [NSString stringWithFormat:_parsedTimeFormat, day, hour, minute, seconds, mili];
-        self.timeLabel.text = strDate;
+        timeString = [NSString stringWithFormat:_parsedTimeFormat, day, hour, minute, seconds, mili];
+    }
+    
+    if (self.timePrefix != nil && self.timePrefix.length > 0) {
+        self.timeLabel.text = [NSString stringWithFormat:@"%@ - %@", self.timePrefix, timeString];
+    } else {
+        self.timeLabel.text = timeString;
     }
 
 }

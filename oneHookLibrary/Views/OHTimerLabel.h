@@ -45,8 +45,9 @@ typedef enum{
 /*Delegate for finish of countdown timer */
 @property (nonatomic, weak) id<OHTimerLabelDelegate> delegate;
 
-/*Target label obejct, default self if you do not initWithLabel nor set*/
+/*Target label object, default self if you do not initWithLabel nor set*/
 @property (nonatomic,strong) UILabel *timeLabel;
+@property (nonatomic,strong) NSString *timePrefix;
 
 /*Type to choose from stopwatch or timer*/
 @property (assign) OHTimerLabelType timerType;
@@ -59,16 +60,14 @@ typedef enum{
 
 
 /*--------Init methods to choose*/
--(instancetype _Nonnull )initWithTimerType:(OHTimerLabelType)theType;
--(instancetype _Nonnull )initWithLabel:(UILabel*)theLabel andTimerType:(OHTimerLabelType)theType;
--(instancetype _Nonnull )initWithLabel:(UILabel*)theLabel;
+-(instancetype)initWithTimerType:(OHTimerLabelType)theType;
+-(instancetype)initWithLabel:(UILabel*)theLabel andTimerType:(OHTimerLabelType)theType;
+-(instancetype)initWithLabel:(UILabel*)theLabel;
 
 
 /*--------Timer control methods to use*/
 -(void)start;
-#if NS_BLOCKS_AVAILABLE
--(void)startWithEndingBlock:(void(^)(NSTimeInterval countTime))end; //use it if you are not going to use delegate
-#endif
+-(void)startWithEndingBlock:(void(^)(NSTimeInterval countTime)) end; //use it if you are not going to use delegate
 -(void)pause;
 -(void)reset;
 
