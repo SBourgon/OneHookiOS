@@ -305,7 +305,7 @@
     long hour = (milliseconds / 3600000) % 24;
     long day = milliseconds / 86400000;
     NSString* timeString;
-    if (day > 1) {
+    if (day >= 1) {
         timeString = [NSString stringWithFormat:@"%ld Days Left", day]; //TODO i18n
     } else {
         timeString = [NSString stringWithFormat:_parsedTimeFormat, hour, minute, seconds, mili];
