@@ -91,27 +91,24 @@
             [sb appendFormat:@"%C", [timeFormat characterAtIndex:i]];
             i++;
             continue;
-        } else if([[timeFormat substringWithRange:NSMakeRange(i, 2)] isEqualToString:@"DD"]) {
-            [sb appendString:@"%1$d"];
-            i+=2;
         } else if([[timeFormat substringWithRange:NSMakeRange(i, 2)] isEqualToString:@"HH"]) {
-            [sb appendString:@"%2$02d"];
+            [sb appendString:@"%1$02d"];
             i+=2;
         } else if([[timeFormat substringWithRange:NSMakeRange(i, 2)] isEqualToString:@"MM"]) {
-            [sb appendString:@"%3$02d"];
+            [sb appendString:@"%2$02d"];
             i+=2;
         } else if([[timeFormat substringWithRange:NSMakeRange(i, 2)] isEqualToString:@"SS"]) {
-            [sb appendString:@"%4$02d"];
+            [sb appendString:@"%3$02d"];
             i+=2;
         } else if([[timeFormat substringWithRange:NSMakeRange(i, 2)] isEqualToString:@"MS"]) {
-            [sb appendString:@"%5$03d"];
+            [sb appendString:@"%4$03d"];
             i+=2;
         } else {
             [sb appendFormat:@"%c", [timeFormat characterAtIndex:i]];
             i++;
         }
     }
-    _parsedTimeFormat = [NSString stringWithString:sb];
+    _parsedTimeFormat = sb.description;
 }
 
 - (void)setStopWatchTime:(NSTimeInterval)time{
@@ -311,7 +308,7 @@
     if (day > 1) {
         timeString = [NSString stringWithFormat:@"%ld Days Left", day]; //TODO i18n
     } else {
-        timeString = [NSString stringWithFormat:_parsedTimeFormat, day, hour, minute, seconds, mili];
+        timeString = [NSString stringWithFormat:_parsedTimeFormat, hour, minute, seconds, mili];
     }
     
     if (self.timePrefix != nil && self.timePrefix.length > 0) {
